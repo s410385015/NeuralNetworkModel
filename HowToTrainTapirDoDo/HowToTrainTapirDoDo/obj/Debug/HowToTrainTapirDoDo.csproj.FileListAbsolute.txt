@@ -8,7 +8,9 @@ c:\users\nako\documents\visual studio 2013\Projects\HowToTrainTapirDoDo\HowToTra
 c:\users\nako\documents\visual studio 2013\Projects\HowToTrainTapirDoDo\HowToTrainTapirDoDo\obj\Debug\HowToTrainTapirDoDo.pdb
 c:\users\nako\documents\visual studio 2013\Projects\HowToTrainTapirDoDo\HowToTrainTapirDoDo\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\Nako\Documents\Visual Studio 2013\Projects\HowToTrainTapirDoDo\HowToTrainTapirDoDo\obj\Debug\HowToTrainTapirDoDo.TLUControl.resources
-C:\Users\Nako\Documents\Visual Studio 2013\Projects\HowToTrainTapirDoDo\HowToTrainTapirDoDo\obj\Debug\HowToTrainTapirDoDo.csprojResolveAssemblyReference.cache
 C:\Users\Nako\Documents\Visual Studio 2013\Projects\HowToTrainTapirDoDo\HowToTrainTapirDoDo\bin\Debug\DrawControl.dll
 C:\Users\Nako\Documents\Visual Studio 2013\Projects\HowToTrainTapirDoDo\HowToTrainTapirDoDo\bin\Debug\DrawControl.pdb
 C:\Users\Nako\Documents\Visual Studio 2013\Projects\HowToTrainTapirDoDo\HowToTrainTapirDoDo\obj\Debug\HowToTrainTapirDoDo.Perceptron.PerceptronControl.resources
+C:\Users\Nako\Documents\Visual Studio 2013\Projects\HowToTrainTapirDoDo\HowToTrainTapirDoDo\obj\Debug\HowToTrainTapirDoDo.Hopfield.HopfieldControl.resources
+C:\Users\Nako\Documents\Visual Studio 2013\Projects\HowToTrainTapirDoDo\HowToTrainTapirDoDo\obj\Debug\HowToTrainTapirDoDo.Backpropagtion.BackpropagationControl.resources
+C:\Users\Nako\Documents\Visual Studio 2013\Projects\HowToTrainTapirDoDo\HowToTrainTapirDoDo\obj\Debug\HowToTrainTapirDoDo.csprojResolveAssemblyReference.cache

@@ -433,6 +433,7 @@
             this.ErrorAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.Name = "PerceptronControl";
             this.Size = new System.Drawing.Size(1102, 607);
+            this.Load += new System.EventHandler(this.PerceptronControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

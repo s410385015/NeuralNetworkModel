@@ -84,14 +84,26 @@ namespace HowToTrainTapirDoDo
                 case 1:
                     tluControl1.Show();
                     perceptronControl11.Hide();
+                    hopfieldControl1.Hide();
+                    backpropagationControl1.Hide();
                     break;
                 case 2:
                     tluControl1.Hide();
                     perceptronControl11.Show();
+                    hopfieldControl1.Hide();
+                    backpropagationControl1.Hide();
                     break;
                 case 3:
                     tluControl1.Hide();
                     perceptronControl11.Hide();
+                    hopfieldControl1.Show();
+                    backpropagationControl1.Hide();
+                    break;
+                case 4:
+                    tluControl1.Hide();
+                    perceptronControl11.Hide();
+                    hopfieldControl1.Hide();
+                    backpropagationControl1.Show();
                     break;
             }
         }
@@ -109,6 +121,16 @@ namespace HowToTrainTapirDoDo
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
             TabIndexChange(3);
+        }
+
+        private void hopfieldControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            TabIndexChange(4);
         }
 
 

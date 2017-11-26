@@ -46,9 +46,11 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.MenuAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.LogoAminator = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.backpropagationControl1 = new HowToTrainTapirDoDo.Backpropagtion.BackpropagationControl();
+            this.hopfieldControl1 = new HowToTrainTapirDoDo.Hopfield.HopfieldControl();
             this.perceptronControl11 = new HowToTrainTapirDoDo.Perceptron.PerceptronControl();
             this.tluControl1 = new HowToTrainTapirDoDo.TLUControl();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -110,7 +112,7 @@
             this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(41)))));
             this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton4.BorderRadius = 0;
-            this.bunifuFlatButton4.ButtonText = "                  About";
+            this.bunifuFlatButton4.ButtonText = "                  Backpropagation";
             this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoAminator.SetDecoration(this.bunifuFlatButton4, BunifuAnimatorNS.DecorationType.None);
             this.MenuAnimator.SetDecoration(this.bunifuFlatButton4, BunifuAnimatorNS.DecorationType.None);
@@ -137,10 +139,11 @@
             this.bunifuFlatButton4.Size = new System.Drawing.Size(253, 55);
             this.bunifuFlatButton4.TabIndex = 4;
             this.bunifuFlatButton4.TabStop = false;
-            this.bunifuFlatButton4.Text = "                  About";
+            this.bunifuFlatButton4.Text = "                  Backpropagation";
             this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton4.Textcolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton4.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
             // 
             // bunifuFlatButton3
             // 
@@ -149,7 +152,7 @@
             this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(41)))));
             this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton3.BorderRadius = 0;
-            this.bunifuFlatButton3.ButtonText = "                  index3";
+            this.bunifuFlatButton3.ButtonText = "                  Hopfield";
             this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoAminator.SetDecoration(this.bunifuFlatButton3, BunifuAnimatorNS.DecorationType.None);
             this.MenuAnimator.SetDecoration(this.bunifuFlatButton3, BunifuAnimatorNS.DecorationType.None);
@@ -176,7 +179,7 @@
             this.bunifuFlatButton3.Size = new System.Drawing.Size(253, 55);
             this.bunifuFlatButton3.TabIndex = 3;
             this.bunifuFlatButton3.TabStop = false;
-            this.bunifuFlatButton3.Text = "                  index3";
+            this.bunifuFlatButton3.Text = "                  Hopfield";
             this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.Silver;
             this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -304,14 +307,13 @@
             // 
             // bunifuCustomLabel1
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
             this.MenuAnimator.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
             this.LogoAminator.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Symbol", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(53, 7);
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic);
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(55, 6);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(329, 32);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(432, 32);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "How to train Tapir\'s DoDo?";
             this.bunifuCustomLabel1.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
@@ -363,12 +365,29 @@
             animation1.TransparencyCoeff = 1F;
             this.LogoAminator.DefaultAnimation = animation1;
             // 
-            // bunifuDragControl1
+            // backpropagationControl1
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.Header;
-            this.bunifuDragControl1.Vertical = true;
+            this.backpropagationControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(60)))));
+            this.MenuAnimator.SetDecoration(this.backpropagationControl1, BunifuAnimatorNS.DecorationType.None);
+            this.LogoAminator.SetDecoration(this.backpropagationControl1, BunifuAnimatorNS.DecorationType.None);
+            this.backpropagationControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.backpropagationControl1.ForeColor = System.Drawing.Color.White;
+            this.backpropagationControl1.Location = new System.Drawing.Point(3559, 40);
+            this.backpropagationControl1.Name = "backpropagationControl1";
+            this.backpropagationControl1.Size = new System.Drawing.Size(1102, 607);
+            this.backpropagationControl1.TabIndex = 5;
+            // 
+            // hopfieldControl1
+            // 
+            this.hopfieldControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(60)))));
+            this.MenuAnimator.SetDecoration(this.hopfieldControl1, BunifuAnimatorNS.DecorationType.None);
+            this.LogoAminator.SetDecoration(this.hopfieldControl1, BunifuAnimatorNS.DecorationType.None);
+            this.hopfieldControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.hopfieldControl1.Location = new System.Drawing.Point(2457, 40);
+            this.hopfieldControl1.Name = "hopfieldControl1";
+            this.hopfieldControl1.Size = new System.Drawing.Size(1102, 607);
+            this.hopfieldControl1.TabIndex = 4;
+            this.hopfieldControl1.Load += new System.EventHandler(this.hopfieldControl1_Load);
             // 
             // perceptronControl11
             // 
@@ -393,11 +412,20 @@
             this.tluControl1.Size = new System.Drawing.Size(1102, 607);
             this.tluControl1.TabIndex = 2;
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.Header;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(1026, 647);
+            this.Controls.Add(this.backpropagationControl1);
+            this.Controls.Add(this.hopfieldControl1);
             this.Controls.Add(this.perceptronControl11);
             this.Controls.Add(this.tluControl1);
             this.Controls.Add(this.Menu);
@@ -412,7 +440,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MenuBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.Header.ResumeLayout(false);
-            this.Header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -438,6 +465,8 @@
         private TLUControl tluControl1;
         private Bunifu.Framework.UI.BunifuImageButton MenuBtn;
         private Perceptron.PerceptronControl perceptronControl11;
+        private Hopfield.HopfieldControl hopfieldControl1;
+        private Backpropagtion.BackpropagationControl backpropagationControl1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

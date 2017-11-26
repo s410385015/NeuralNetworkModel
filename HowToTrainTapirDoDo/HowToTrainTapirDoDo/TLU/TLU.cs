@@ -49,6 +49,7 @@ namespace HowToTrainTapirDoDo.TLU
         public Queue<Data> q;
         private BackgroundWorker TLUbk;
         private TLUControl myControl;
+        public bool flag = false;
         public TLUmodel(double t,double a,Data d,int m,TLUControl parent)
         {
             Max = m;
@@ -85,11 +86,12 @@ namespace HowToTrainTapirDoDo.TLU
                     weight = weight + (rate * (tmp.output - o)) * tmp;
                 }
                 q.Enqueue(tmp);
-                if(timer>10)
+                if(timer>20)
                 {
                     timer = 0;
                     Console.WriteLine(m);
                     myControl.Notification(weight.x, weight.y, threshold);
+                    
                 }
                 if(m>=Max)
                 {
@@ -99,14 +101,15 @@ namespace HowToTrainTapirDoDo.TLU
                 timer++;
                 m++;
                 Console.WriteLine(tmp.y+" "+tmp.x + " " + weight.x + " " + weight.y);
-                System.Threading.Thread.Sleep(5);
+                System.Threading.Thread.Sleep(1);
+                if (flag)
+                    break;
             }
 
             if(m<Max)
-                myControl.ShowLog("Finsih-find weight:\n ( " + weight.x + " , " + weight.y+" )\n");
+                myControl.ShowLog("Finsih-find weight:\n ( W1: " + weight.x + " , W2: " + weight.y+" )\n");
             myControl.Notification(weight.x, weight.y,threshold);
-            myControl.locked = false;
-
+            myControl.ReleaseBtn();
          
             
         }

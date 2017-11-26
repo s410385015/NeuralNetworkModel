@@ -174,5 +174,10 @@ namespace HowToTrainTapirDoDo.Perceptron
                 UserOutput.Hide();
             }
         }
+
+        private void PerceptronControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

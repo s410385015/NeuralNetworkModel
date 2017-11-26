@@ -163,19 +163,28 @@ namespace HowToTrainTapirDoDo
 
         private void ResetBtn_Click(object sender, EventArgs e)
         {
-            if (!locked)
+            if (locked)
+            {
+                tlu.flag = true;
+            }
+            else
             {
                 XY_Point_Panel.Refresh();
                 tlu.Reset();
                 XYgraph.Reset();
                 Log.Clear();
             }
+             
+             
         }
 
         private void TrainBtn_Click(object sender, EventArgs e)
         {
             if (locked)
                 return;
+
+            locked = true;
+            ResetBtn.ButtonText = "Stop";
             error.Hide();
             double a, t, w1, w2;
             int m;
@@ -216,7 +225,10 @@ namespace HowToTrainTapirDoDo
                     ShowLog("( "+(p.X * 0.5) + " , " + (p.Y * 0.5) + " ) value=" + XYgraph.Map[i]+"\n");
                 }
             }
-            tlu.Train();
+            if (tlu.q.Count > 0)
+                tlu.Train();
+            else
+                ReleaseBtn();
         }
 
     
@@ -261,6 +273,7 @@ namespace HowToTrainTapirDoDo
 
                     pen.Dispose();
                     g.Dispose();
+                   
                 }
                 catch
                 {
@@ -268,6 +281,15 @@ namespace HowToTrainTapirDoDo
                 }
            }));
 
+        }
+
+        public void ReleaseBtn()
+        {
+            this.Invoke(new MethodInvoker(delegate()
+            {
+                locked = false;
+                ResetBtn.ButtonText = "Reset";
+            }));
         }
 
        public void ShowLog(string s)

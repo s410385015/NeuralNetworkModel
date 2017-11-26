@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tapir_ntz_3.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Bunifu Technologies\Bunifu Framework Manager\bin\updates\Bunifu UI 1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
@@ -52,11 +55,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backpropagtion\Backpropagation.cs" />
+    <Compile Include="Backpropagtion\BackpropagationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Backpropagtion\BackpropagationControl.Designer.cs">
+      <DependentUpon>BackpropagationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Backpropagtion\OutputType.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hopfield\Hopfield.cs" />
+    <Compile Include="Hopfield\HopfieldControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Hopfield\HopfieldControl.Designer.cs">
+      <DependentUpon>HopfieldControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Perceptron\Perceptron.cs" />
     <Compile Include="Perceptron\PerceptronControl.cs">
@@ -75,8 +93,14 @@
       <DependentUpon>TLUControl.cs</DependentUpon>
     </Compile>
     <Compile Include="TLU\XYGraph.cs" />
+    <EmbeddedResource Include="Backpropagtion\BackpropagationControl.resx">
+      <DependentUpon>BackpropagationControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hopfield\HopfieldControl.resx">
+      <DependentUpon>HopfieldControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Perceptron\PerceptronControl.resx">
       <DependentUpon>PerceptronControl.cs</DependentUpon>
@@ -105,6 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tapir_ntz_3.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
